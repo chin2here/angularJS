@@ -1,4 +1,4 @@
-var ApplicationUtils = require('/Users/cshahp200/Desktop/chintan_virtualenv/project/node_modules/protractor/example/applicationUtils.js');
+var ApplicationUtils = require('../protractor/example/applicationUtils.js');
 
 describe("Application Functionality ", function(){
 	
@@ -18,9 +18,15 @@ it('Login without Registration ', function() {
 	element(by.css('.btn-primary')).click();
 });
 
+it('register ', function() {
+	element(by.css('.btn-link')).click();
+	element(by.linkText('#!/register').getTagName().isPresent()).toBeTruthy();
+
+});
+
 it('Registration ', function() {
 	ApplicationUtils.registration(userName, "test", userName,userPwd);
-	expect(element(by.linkText('#!/register')).getTagName()).toBe('a');
+	expect(element(by.css('.alert')).getTest()).toBe('Registration Successful')
 
 });
 
