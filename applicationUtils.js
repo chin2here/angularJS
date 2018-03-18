@@ -8,6 +8,11 @@ var applicationUtils = {
 		element(by.css('.btn-primary')).click();
 	},
 
+
+	register: function() {
+		element(by.linkText('#!/register')).clicl();
+	},
+
 	registration: function(firstName,lastName,userName,userPwd) {
 		element(by.model('vm.user.firstName')).sendKeys(firstName);
 		element(by.model('vm.user.lastName')).sendKeys(lastName);
